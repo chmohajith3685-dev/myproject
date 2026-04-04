@@ -1,28 +1,39 @@
-import numpy as np 
-
-# Create a 1D array
-arr1d=np.array([1,2,3,4,5,6])
-print(f"1D Array:{arr1d}")
-
-# Create a 2D array
-arr2d=np.array([[1,2,3],[4,6,8]])
-print(f"2D Array:{arr2d}")
-
-# Performing Basic Mathematical operations
-a=np.array([12,56,89])
-b=np.array([1,0,1])
-arr_sum = np.add(a,b)
-print(f"\na:{a}")
-print(f"b:{b}") 
-print(f"Element wise addition:{arr_sum}")
-
-
-#Statistics
-data=np.array((23,56,78,90,45))
-mean_val=np.mean(data)
-min_val=np.min(data)
-max_val=np.max(data)
-print(f"\nArray:{data}")
-print(f"Mean:{mean_val}")
-print(f"Minimum:{min_val}")
-print(f"Maximum:{max_val}")
+import numpy as np
+ 
+# --- 1. Create Arrays ---
+a = np.array([1, 2, 3, 4, 5])
+b = np.array([10, 20, 30, 40, 50])
+print("Array A:", a)
+print("Array B:", b)
+ 
+# --- 2. Array Operations ---
+print("\nAddition:      ", a + b)
+print("Subtraction:   ", b - a)
+print("Multiplication:", a * b)
+print("Division:      ", b / a)
+ 
+# --- 3. 2D Array (Matrix) ---
+matrix = np.array([[1, 2, 3],
+                   [4, 5, 6],
+                   [7, 8, 9]])
+print("\n2D Matrix:\n", matrix)
+print("Shape:", matrix.shape)
+print("Transpose:\n", matrix.T)
+ 
+# --- 4. Built-in Functions ---
+print("\nSum:  ", np.sum(a))
+print("Mean: ", np.mean(a))
+print("Max:  ", np.max(a))
+print("Min:  ", np.min(a))
+print("Std:  ", np.std(a))
+ 
+# --- 5. Special Arrays ---
+print("\nZeros:\n", np.zeros((2, 3)))
+print("Ones:\n",  np.ones((2, 3)))
+print("Range:",   np.arange(0, 10, 2))
+print("Linspace:",np.linspace(0, 1, 5))
+ 
+# --- 6. Random Numbers ---
+print("\nRandom Array:", np.random.randint(1, 100, 5))
+print("Random Matrix:\n", np.random.rand(2, 3).round(2))
+ 
