@@ -1,40 +1,41 @@
 import matplotlib.pyplot as plt
-
-x=[1,2,3,4]
-y=[20,40,60,90]
-
-categories=['A','B','C','D']
-values=[1,3,5,7]
-
-labels=['CARS','BIKES','CYCLES','LORRIES']
-count=[23,17,15,26]    
-
-#Subplot Layout
-plt.figure(figsize=(10,8))
-
-#1.Line plot
-plt.subplot(2,2,1)
-plt.plot(x,y,marker='o',color='blue')
-plt.title("Line Plot")
-
-#2.Bar Chart
-plt.subplot(2,2,2)
-plt.bar(categories,values,color='green')
-plt.title("Bar Chart")
-
-#3.Scatter Plot
-plt.subplot(2,2,3)
-plt.scatter(x,y,color='m',alpha=0.5)
-plt.title("Scatter Plot")
-
-#4.Pie Chart
-plt.subplot(2,2,4)
-plt.pie(count,labels=labels,autopct='%1.1f%%')
-plt.title("Pie chart")
-
+import numpy as np
+ 
+# --- 1. Line Chart ---
+x = [1, 2, 3, 4, 5]
+y = [10, 25, 15, 40, 30]
+ 
+plt.subplot(2, 2, 1)
+plt.plot(x, y, color='blue', marker='o')
+plt.title('Line Chart')
+plt.xlabel('X'); plt.ylabel('Y')
+ 
+# --- 2. Bar Chart ---
+subjects = ['Maths', 'Science', 'English']
+marks    = [85, 90, 78]
+ 
+plt.subplot(2, 2, 2)
+plt.bar(subjects, marks, color=['red', 'green', 'blue'])
+plt.title('Bar Chart')
+plt.ylabel('Marks')
+ 
+# --- 3. Pie Chart ---
+items  = ['Food', 'Transport', 'Savings']
+values = [40, 30, 30]
+ 
+plt.subplot(2, 2, 3)
+plt.pie(values, labels=items, autopct='%1.1f%%')
+plt.title('Pie Chart')
+ 
+# --- 4. Scatter Plot ---
+hours = np.random.randint(1, 10, 20)
+score = hours * 8 + np.random.randint(-5, 5, 20)
+ 
+plt.subplot(2, 2, 4)
+plt.scatter(hours, score, color='green')
+plt.title('Scatter Plot')
+plt.xlabel('Hours'); plt.ylabel('Score')
+ 
 plt.tight_layout()
-
-#Show all plots
 plt.show()
-
-
+ 
